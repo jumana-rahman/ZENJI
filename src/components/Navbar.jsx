@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { NavLink, Link } from "react-router-dom";
 import { staggerContainer, fadeUp } from "../lib/motion";
 
-function Navbar({ cartCount }) {
+function Navbar({ cartCount, onCartOpen }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -58,10 +58,11 @@ function Navbar({ cartCount }) {
           <div className="flex items-center gap-5">
             {/* Cart */}
             <motion.button
+              onClick={onCartOpen}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="relative text-[#F5F5F5] hover:text-[#39FF14] transition-colors"
-              aria-label="Cart"
+              aria-label="Open cart"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0" />

@@ -7,6 +7,7 @@ import CartDrawer from "./components/CartDrawer";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Collections from "./pages/Collections";
+import Lookbook from "./pages/Lookbook";
 import ComingSoon from "./pages/ComingSoon";
 
 // ── Scroll to top on route change ─────────────────────────────────────────────
@@ -65,7 +66,7 @@ export default function App() {
         <Route path="/" element={<Home onAddToCart={handleAddToCart} />} />
         <Route path="/shop" element={<Shop onAddToCart={handleAddToCart} />} />
         <Route path="/collections" element={<Collections />} />
-        <Route path="/lookbook" element={<ComingSoon title="Lookbook" />} />
+        <Route path="/lookbook" element={<Lookbook />} />
         <Route path="/about" element={<ComingSoon title="About" />} />
         <Route path="*" element={<ComingSoon title="Page Not Found" />} />
       </Routes>
